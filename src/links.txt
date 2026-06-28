@@ -18,5 +18,5 @@ Upcoming:
 https://api.themoviedb.org/3/movie/upcoming?api_key=89161bb61fe0791ee95b3553e05c4421
 
 Search : 
-https://api.themoviedb.org/3/search/movie?api_key=89161bb61fe0791ee95b3553e05c4421&query=avatar
+https://api.themoviedb.org/3/search/movie?api_key=89161bb61fe0791ee95b3553e05c4421&query={movie_name}
 
