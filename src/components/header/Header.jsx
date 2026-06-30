@@ -2,13 +2,17 @@ import { Link, NavLink } from "react-router-dom"
 import Logo from "../../assets/logo.png"
 
 export const Header = () => {
+
+  const activeClass = "text-base block py-2 px-3 text-blue bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+  const inActiveClass = "text-base block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+
   return (
     <header>
       <nav className="bg-neutral-primary fixed w-full z-20 top-0 start-0  border-default">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src={Logo} className="h-7" alt="Cinemate Logo" />
-            <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">Cinemate</span>
+            <img src={Logo} className="h-9" alt="Cinemate Logo" />
+            <span className="self-center text-2xl text-heading font-semibold whitespace-nowrap">Cinemate</span>
         </NavLink>
         <div className="flex items-center md:order-2">
           <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="flex items-center justify-center md:hidden text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-2 focus:ring-neutral-tertiary font-medium leading-5 rounded-base text-sm w-10 h-10 focus:outline-none">
@@ -36,16 +40,16 @@ export const Header = () => {
             </div>
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
               <li>
-                <NavLink to="/" className="block py-2 px-3 text-white  bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0" end>Home</NavLink>
+                <NavLink to="/" className={({isActive}) => isActive ? activeClass : inActiveClass } end>Home</NavLink>
               </li>
               <li>
-                <NavLink to="/movies/popular" className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Popular</NavLink>
+                <NavLink to="/movies/popular" className={({isActive}) => isActive ? activeClass : inActiveClass }>Popular</NavLink>
               </li>
               <li>
-                <NavLink to="/movies/top" className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Top Rated</NavLink>
+                <NavLink to="/movies/top" className={({isActive}) => isActive ? activeClass : inActiveClass }>Top Rated</NavLink>
               </li>
               <li>
-                <NavLink to="/movies/upcoming" className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Upcoming</NavLink>
+                <NavLink to="/movies/upcoming" className={({isActive}) => isActive ? activeClass : inActiveClass }>Upcoming</NavLink>
               </li>
             </ul>
           </div>
